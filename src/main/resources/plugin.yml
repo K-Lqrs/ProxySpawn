@@ -1,0 +1,9 @@
+name: ProxySpawn
+version: 1
+main: net.elysium.plugin.proxyspawn.Main
+author: Elysium
+description: Proxy-compatible fixed spawn point plugin.
+commands:
+  pspawn:
+    description: set a spawn point.
+    usage: /<command>
