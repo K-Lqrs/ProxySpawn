@@ -1,10 +1,10 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
-    id "org.jetbrains.kotlin.plugin.serialization" version '1.9.10'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.0'
+    id "org.jetbrains.kotlin.plugin.serialization" version '2.0.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-group = 'elys'
+group = 'net.rk4z'
 version = '1.0'
 
 repositories {
@@ -14,22 +14,19 @@ repositories {
 
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib'
-    compileOnly 'io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT'
-}
-
-test {
-    useJUnitPlatform()
+    compileOnly 'io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT'
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = '17'
+    kotlinOptions {
+        jvmTarget = '21'
+    }
 }
 
-compileTestKotlin {
-    kotlinOptions.jvmTarget = '17'
+compileJava {
+    JavaVersion.VERSION_21
 }
 
 shadowJar {

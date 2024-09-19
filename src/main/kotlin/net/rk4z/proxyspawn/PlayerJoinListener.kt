@@ -1,4 +1,4 @@
-package net.elysium.plugin.proxyspawn
+package net.rk4z.proxyspawn
 
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener

@@ -1,4 +1,4 @@
-package net.elysium.plugin.proxyspawn
+package net.rk4z.proxyspawn
 
 import org.bukkit.Bukkit
 import org.bukkit.Location
@@ -10,10 +10,7 @@ class Main : JavaPlugin() {
     private val spawnDataFile = File(dataFolder, "spawnLocation.txt")
 
     override fun onEnable() {
-        getCommand("pspawn")?.setExecutor(PspawnCommand(this))
-
         server.pluginManager.registerEvents(PlayerJoinListener(this), this)
-
 
         if (!dataFolder.exists()) {
             dataFolder.mkdirs()
@@ -22,7 +19,6 @@ class Main : JavaPlugin() {
         if (!spawnDataFile.exists()) {
             spawnDataFile.createNewFile()
         }
-
     }
 
     fun saveLocationToFile(location: Location) {
@@ -47,10 +43,7 @@ class Main : JavaPlugin() {
         return Location(world, x, y, z, yaw, pitch)
     }
 
-
-
     fun setSpawn(location: Location) {
         spawnLocation = location
     }
-
 }
